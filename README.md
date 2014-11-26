@@ -8,7 +8,7 @@ the converter that ship with Sass.
 ## Options
 
 ### from*
-type: `String`
+type: `String`  
 The format to convert from. Can be `css`, `scss`, `sass`.
 
 ### to*
@@ -38,6 +38,38 @@ type: `Boolean`
 Use Unix-style newlines in written files.
 Always true on Unix.
 
+
+## Usage
+
+```js
+var vfs = require('vinyl-fs');
+var converter = require('sass-convert');
+
+vfs.src('./input/**/*.+(sass|scss|css)')
+  .pipe(converter({
+    from: 'sass',
+    to: 'scss',
+  }))
+  .pipe(vfs.dest('./output'));
+
+```
+
+```js
+var gulp = require('gulp');
+var sassdoc = require('gulp-sassdoc');
+var converter = require('sass-convert');
+
+gulp.task('sassdoc', function () {
+  return gulp.src('./input/**/*.+(sass|scss)')
+    .pipe(converter({
+      from: 'sass',
+      to: 'scss',
+    }))
+    .pipe(sassdoc({
+      'dest': 'path/to/docs'
+    }));
+});
+```
 
 ## Credits
 
