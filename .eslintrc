@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": false,
+    "node": true,
+    "amd": false,
+    "mocha": false
+  },
+
+  "rules": {
+    "no-global-strict": 0,
+    "quotes": "single"
+  }
+}
