@@ -1,4 +1,5 @@
-# sass-convert
+# sass-convert [![npm version](http://img.shields.io/npm/v/sass-convert.svg?style=flat)](https://www.npmjs.org/package/sass-convert) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat)](https://travis-ci.org/SassDoc/sass-convert?branch=master)
+
 > Node.js bindings to [sass-convert].
 
 sass-convert is a library that provides binding for Node.js to [sass-convert],
