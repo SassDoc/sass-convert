@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - '0.10'
+
+env:
+  - SASS_VERSION=3.4.9
+
+before_install:
+- gem update --system
+- gem install sass -v $SASS_VERSION
