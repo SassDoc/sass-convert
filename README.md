@@ -3,7 +3,7 @@
 > Node.js bindings to [sass-convert].
 
 sass-convert is a library that provides binding for Node.js to [sass-convert],
-the converter that ship with Sass.
+the converter shipped with Sass. Integrates the converter in a stream pipeline.
 
 
 ## Options
@@ -23,7 +23,7 @@ Convert underscores to dashes.
 ### indent
 type: `Number|String`  
 How many spaces to use for each level of indentation. Defaults to 2.
-`'t'`` means use hard tabs.
+`'t'` means use hard tabs.
 
 ### old
 type: `Boolean`  
@@ -38,6 +38,18 @@ Specify the default encoding for input files.
 type: `Boolean`  
 Use Unix-style newlines in written files.
 Always true on Unix.
+
+
+## Installation
+
+```
+npm i sass-convert --save
+```
+
+## Requirements
+
+You need to have Sass (Ruby Sass >=3.4.5) installed.
+Either globally or locally with Bundler.
 
 
 ## Usage
