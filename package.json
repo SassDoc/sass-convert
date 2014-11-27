@@ -56,6 +56,7 @@
     "dist": "traceur --modules=commonjs --dir lib dist",
     "lint": "eslint lib/*.js",
     "test": "",
-    "pretest": "$npm_package_scripts_lint"
+    "pretest": "$npm_package_scripts_lint",
+    "prepublish": "$npm_package_scripts_dist"
   }
 }
