@@ -1,0 +1,9 @@
+body {
+  background: white;
+}
+main {
+  max-width: 60%;
+}
+main .myclass {
+  color: red;
+}
