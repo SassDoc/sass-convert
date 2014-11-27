@@ -6,8 +6,16 @@
     "mocha": false
   },
 
+  "settings": {
+    "ecmascript": 6
+  },
+
   "rules": {
+    "quotes": [2, "single"],
     "no-global-strict": 0,
-    "quotes": "single"
+    "no-comma-dangle": 0,
+
+    "strict": 1,
+    "no-undef": 1
   }
 }
