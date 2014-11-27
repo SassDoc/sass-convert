@@ -1,0 +1,5 @@
+{
+  "name": "sass-convert",
+  "description": "Node.js bindings to sass-convert",
+  "tags": ["sass", "scss", "css", "convertion", "node"]
+}
