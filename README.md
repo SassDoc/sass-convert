@@ -16,6 +16,13 @@ The format to convert from. Can be `css`, `scss`, `sass`.
 type: `String`  
 The format to convert to. Can be `scss` or `sass`.
 
+### force
+type: `Boolean`  
+default: `false`  
+Continue the stream chain even if the converter is unable to work properly
+(e.g.: no `sass-convert` binary found). Unconverted chunks/files won't be pushed
+to the next pipe anyway.
+
 ### dasherize
 type: `Boolean`  
 Convert underscores to dashes.
