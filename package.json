@@ -1,6 +1,6 @@
 {
   "name": "sass-convert",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js bindings to sass-convert",
   "keywords": [
     "sass",
