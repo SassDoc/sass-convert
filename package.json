@@ -41,7 +41,6 @@
     "semver": "^4.1.0",
     "semver-regex": "^1.0.0",
     "through2": "^0.6.3",
-    "traceur-runtime": "0.0.59",
     "which": "^1.0.5"
   },
   "devDependencies": {
@@ -57,9 +56,11 @@
     "npm": ">=2.1.0"
   },
   "scripts": {
-    "dist": "traceur --modules=commonjs --dir lib dist",
+    "rebuild": "rm -rf node_modules && npm install",
+    "dist": "rm -rf dist && traceur --modules=commonjs --dir lib dist",
+    "runtime": "mkdir -p bin && cp node_modules/traceur/bin/traceur-runtime.js bin/traceur-runtime.js",
     "lint": "eslint lib/*.js",
     "test": "tape test/*.test.js | faucet",
-    "prepublish": "$npm_package_scripts_dist"
+    "prepublish": "npm run dist && npm run runtime"
   }
 }
