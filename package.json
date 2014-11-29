@@ -45,7 +45,7 @@
     "which": "^1.0.5"
   },
   "devDependencies": {
-    "eslint": "^0.9.2",
+    "eslint": "^0.11.0-alpha.0",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
     "tape": "^3.0.3",
