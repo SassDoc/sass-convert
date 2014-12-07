@@ -1,8 +1,0 @@
-.editorconfig
-.gitattributes
-.eslintrc
-.npmignore
-.travis.yml
-sache.json
-test
-lib

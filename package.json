@@ -36,6 +36,14 @@
     "type": "unlicence",
     "url": "http://unlicense.org"
   },
+  "files": [
+    "bin",
+    "dist",
+    "CHANGELOG.md",
+    "index.js",
+    "README.md",
+    "UNLICENSE"
+  ],
   "dependencies": {
     "dargs": "^3.0.0",
     "semver": "^4.1.0",
