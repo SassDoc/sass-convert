@@ -1,5 +1,10 @@
 # sass-convert changelog
 
+## 0.2.3
+(2014-12-19)
+
+* Minor code improvements and error handling.
+
 ## 0.2.2
 (2014-12-07)
 
