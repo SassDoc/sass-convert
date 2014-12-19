@@ -57,7 +57,7 @@
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
     "tape": "^3.0.3",
-    "traceur": "0.0.79",
+    "traceur": "latest",
     "vinyl-fs": "^0.3.13"
   },
   "engines": {
