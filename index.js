@@ -1,4 +1,4 @@
 'use strict';
 
 require('./bin/traceur-runtime');
-module.exports = require('./dist/converter');
+module.exports = require('./dist');
