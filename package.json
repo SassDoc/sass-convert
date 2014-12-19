@@ -45,6 +45,7 @@
     "UNLICENSE"
   ],
   "dependencies": {
+    "concat-stream": "^1.4.7",
     "dargs": "^3.0.0",
     "semver": "^4.1.0",
     "semver-regex": "^1.0.0",
