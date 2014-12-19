@@ -58,6 +58,7 @@
     "rimraf": "^2.2.8",
     "tape": "^3.0.3",
     "traceur": "latest",
+    "traceur-runner": "^1.0.2",
     "vinyl-fs": "^0.3.13"
   },
   "engines": {
@@ -70,6 +71,7 @@
     "runtime": "mkdir -p bin && cp node_modules/traceur/bin/traceur-runtime.js bin/traceur-runtime.js",
     "lint": "eslint lib/*.js",
     "test": "tape test/*.test.js | faucet",
-    "prepublish": "npm run dist && npm run runtime"
+    "prepublish": "npm run dist && npm run runtime",
+    "inspect": "node test/inspect.js"
   }
 }
