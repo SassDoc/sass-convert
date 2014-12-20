@@ -3,125 +3,83 @@
 var fs = require('fs');
 var vfs = require('vinyl-fs');
 var test = require('tape');
+var readdirp = require('readdirp');
 var rimraf = require('rimraf');
 var converter = require('../');
+
+var exist = fs.existsSync;
+var read = function (path) {
+  return fs.readFileSync(path, 'utf8');
+}
 
 test('before', function (assert) {
   assert.plan(1);
 
-  var stream = vfs.src('test/fixture/input/**/*.+(sass|scss|css)')
+  vfs.src('test/fixture/input/**/*.+(sass|scss|css)')
     .pipe(converter({
       from: 'sass',
       to: 'scss',
     }))
-    .pipe(vfs.dest('test/output'));
+    .on('error', function (err) {
+      assert.fail(err.message);
+      assert.end();
+    })
+    .pipe(vfs.dest('test/output'))
+    .on('end', function () {
+      assert.pass('Converter successfully run');
+      assert.end();
+    });
 
-  stream.on('error', function (err) {
-    assert.fail(err.message);
-    assert.end();
-  });
-
-  stream.on('end', function () {
-    assert.pass();
-    assert.end();
-  });
 });
 
-test('output', function (assert) {
+test('output#structure', function (assert) {
   assert.plan(5);
 
   assert.ok(
-    fs.existsSync('test/output'),
+    exist('test/output'),
     'Should create an `output` dir'
   );
   assert.ok(
-    fs.existsSync('test/output/css'),
+    exist('test/output/css'),
     'Should create a `css` dir'
   );
   assert.ok(
-    fs.existsSync('test/output/sass'),
+    exist('test/output/sass'),
     'Should create a `sass` dir'
   );
   assert.ok(
-    fs.existsSync('test/output/scss'),
+    exist('test/output/scss'),
     'Should create a `scss` dir'
   );
 
-  var actual = fs.readFileSync('test/fixture/expected/sass/one.sass', 'utf8');
-  var expected = fs.readFileSync('test/output/sass/one.sass', 'utf8');
+  var result = [];
+  var expected = [
+    'css/one.css',
+    'css/two.css',
+    'sass/one.sass',
+    'sass/two.sass',
+    'scss/one.scss',
+    'scss/two.scss',
+  ];
 
-  assert.equal(
-    actual,
-    expected,
-    'Should properly convert Sass to SCSS'
-  );
-
-  assert.end();
+  readdirp({ root: 'test/output', fileFilter: '**/*.+(sass|scss|css)' })
+    .on('data', function (entry) {
+      result.push(entry.path);
+    })
+    .on('end', function () {
+      assert.deepEqual(result.sort(), expected.sort(), 'All chunks should pass through');
+      assert.end();
+    });
 });
 
-test('output', function (assert) {
-  assert.plan(5);
-
-  assert.ok(
-    fs.existsSync('test/output'),
-    'Should create an `output` dir'
-  );
-  assert.ok(
-    fs.existsSync('test/output/css'),
-    'Should create a `css` dir'
-  );
-  assert.ok(
-    fs.existsSync('test/output/sass'),
-    'Should create a `sass` dir'
-  );
-  assert.ok(
-    fs.existsSync('test/output/scss'),
-    'Should create a `scss` dir'
-  );
-
-  var actual = fs.readFileSync('test/fixture/expected/sass/one.sass', 'utf8');
-  var expected = fs.readFileSync('test/output/sass/one.sass', 'utf8');
-
-  assert.equal(
-    actual,
-    expected,
-    'Should properly convert Sass to SCSS'
-  );
-
-  assert.end();
-});
-
-test('output', function (assert) {
-  assert.plan(4);
-
-  assert.ok(
-    fs.existsSync('test/output'),
-    'Should create an `output` dir'
-  );
-  assert.ok(
-    fs.existsSync('test/output/css'),
-    'Should create a `css` dir'
-  );
-  assert.ok(
-    fs.existsSync('test/output/sass'),
-    'Should create a `sass` dir'
-  );
-  assert.ok(
-    fs.existsSync('test/output/scss'),
-    'Should create a `scss` dir'
-  );
-
-  assert.end();
-});
-
-test('sass', function (assert) {
+test('output#sass', function (assert) {
   assert.plan(1);
 
-  var actual = fs.readFileSync('test/output/sass/one.sass', 'utf8');
-  var expected = fs.readFileSync('test/fixture/expected/sass/one.sass', 'utf8');
+  var result = read('test/output/sass/one.sass');
+  var expected = read('test/fixture/expected/sass/one.sass');
 
   assert.equal(
-    actual,
+    result,
     expected,
     'Should properly convert Sass to SCSS'
   );
@@ -129,14 +87,14 @@ test('sass', function (assert) {
   assert.end();
 });
 
-test('scss', function (assert) {
+test('output#scss', function (assert) {
   assert.plan(1);
 
-  var actual = fs.readFileSync('test/output/scss/one.scss', 'utf8');
-  var expected = fs.readFileSync('test/fixture/input/scss/one.scss', 'utf8');
+  var result = read('test/output/scss/one.scss');
+  var expected = read('test/fixture/input/scss/one.scss');
 
   assert.equal(
-    actual,
+    result,
     expected,
     'Should not modify SCSS files'
   );
@@ -147,11 +105,11 @@ test('scss', function (assert) {
 test('css', function (assert) {
   assert.plan(1);
 
-  var actual = fs.readFileSync('test/output/css/one.css', 'utf8');
-  var expected = fs.readFileSync('test/fixture/input/css/one.css', 'utf8');
+  var result = read('test/output/css/one.css');
+  var expected = read('test/fixture/input/css/one.css');
 
   assert.equal(
-    actual,
+    result,
     expected,
     'Should not modify CSS files'
   );
@@ -160,7 +118,5 @@ test('css', function (assert) {
 });
 
 test('after', function (assert) {
-  rimraf('test/output', function () {
-    assert.end();
-  });
+  rimraf('test/output', assert.end);
 });
