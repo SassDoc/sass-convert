@@ -102,7 +102,7 @@ test('output#scss', function (assert) {
   assert.end();
 });
 
-test('css', function (assert) {
+test('output#css', function (assert) {
   assert.plan(1);
 
   var result = read('test/output/css/one.css');

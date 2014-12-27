@@ -18,8 +18,6 @@ vfs.src('./test/fixture/input/**/*.+(sass|scss|css)')
     from: 'sass',
     to: 'scss',
   }))
-  .on('error', function (err) {
-    console.error(err);
-  })
+  .on('error', console.error)
   .pipe(inspect())
   .pipe(vfs.dest('./test/output'));
