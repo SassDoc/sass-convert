@@ -1,5 +1,10 @@
 # sass-convert changelog
 
+## 0.2.4
+(2014-12-28)
+
+* Added file stream support.
+
 ## 0.2.3
 (2014-12-19)
 
