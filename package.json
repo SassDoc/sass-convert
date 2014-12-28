@@ -72,6 +72,7 @@
     "runtime": "mkdir -p bin && cp node_modules/traceur/bin/traceur-runtime.js bin/traceur-runtime.js",
     "lint": "eslint lib/*.js",
     "test": "tape test/*.test.js | faucet",
+    "pretest": "$npm_package_scripts_prepublish",
     "prepublish": "npm run dist && npm run runtime",
     "inspect": "node test/inspect.js"
   }

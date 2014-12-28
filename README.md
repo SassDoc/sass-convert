@@ -91,6 +91,22 @@ gulp.task('sassdoc', function () {
 });
 ```
 
+```js
+var fs = require('fs');
+var vfs = require('vinyl-fs');
+var source = require('vinyl-source-stream');
+var rename = require('gulp-rename');
+
+fs.createReadStream('./file.sass')
+  .pipe(source('file.sass'))
+  .pipe(converter({
+    from: 'sass',
+    to: 'scss',
+  }))
+  .pipe(rename('file.scss'))
+  .pipe(vfs.dest('./'));
+```
+
 ## Credits
 
 * [Pascal Duez](https://twitter.com/pascalduez)
