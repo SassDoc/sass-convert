@@ -1,5 +1,10 @@
 # sass-convert changelog
 
+## 0.3.0
+(2015-01-10)
+
+* Switch from Traceur to 6to5.
+
 ## 0.2.4
 (2014-12-28)
 
