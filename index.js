@@ -1,4 +1,4 @@
 'use strict';
 
-require('./bin/traceur-runtime');
+require('core-js/shim');
 module.exports = require('./dist');
