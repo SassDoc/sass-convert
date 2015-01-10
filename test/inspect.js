@@ -6,8 +6,7 @@ var through = require('through2');
 var source = require('vinyl-source-stream');
 var rename = require('gulp-rename');
 
-require('traceur-runner');
-var converter = require('../lib');
+var converter = require('../');
 
 function inspect() {
   return through.obj(function (chunk, enc, cb) {
