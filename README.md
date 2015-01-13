@@ -1,4 +1,4 @@
-# sass-convert [![npm version](http://img.shields.io/npm/v/sass-convert.svg?style=flat)](https://www.npmjs.org/package/sass-convert) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat)](https://travis-ci.org/SassDoc/sass-convert?branch=master)
+# sass-convert [![npm version](http://img.shields.io/npm/v/sass-convert.svg?style=flat)](https://www.npmjs.org/package/sass-convert) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat)](https://travis-ci.org/SassDoc/sass-convert?branch=master) [![Coverage Status](https://img.shields.io/coveralls/SassDoc/sass-convert.svg?style=flat)](https://coveralls.io/r/SassDoc/sass-convert)
 
 > Node.js bindings to [sass-convert].
 
