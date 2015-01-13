@@ -23,6 +23,18 @@ test:
 	tape test/*.test.js | faucet
 
 
+# Release, publish
+# ================
+
+# "patch", "minor", "major", "prepatch",
+# "preminor", "premajor", "prerelease"
+VERS := "patch"
+
+publish:
+	npm version $(VERS) -m "Release %s"
+	npm publish
+
+
 # Tools
 # =====
 
