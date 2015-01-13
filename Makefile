@@ -19,10 +19,10 @@ develop:
 lint:
 	eslint --reset ./lib
 
-test:
+test: dist
 	tape test/*.test.js | faucet
 
-cover:
+cover: dist
 	rm -rf coverage
 	istanbul cover --report none --print detail test/*.test.js
 
@@ -43,7 +43,7 @@ travis: cover
 # "preminor", "premajor", "prerelease"
 VERS := "patch"
 
-publish:
+publish: dist test
 	npm version $(VERS) -m "Release %s"
 	npm publish
 	git push --follow-tags
