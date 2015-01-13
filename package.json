@@ -70,6 +70,6 @@
     "npm": ">=2.1.0"
   },
   "scripts": {
-    "test": "make dist lint test"
+    "test": "make dist test"
   }
 }
