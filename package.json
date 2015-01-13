@@ -70,12 +70,6 @@
     "npm": ">=2.1.0"
   },
   "scripts": {
-    "rebuild": "rm -rf node_modules && npm install",
-    "dist": "rm -rf dist && node_modules/.bin/6to5 lib --out-dir dist",
-    "lint": "eslint lib/*.js",
-    "test": "tape test/*.test.js | faucet",
-    "pretest": "$npm_package_scripts_prepublish",
-    "prepublish": "npm run dist",
-    "inspect": "node test/inspect.js"
+    "test": "make dist lint test"
   }
 }

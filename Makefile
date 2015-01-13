@@ -12,6 +12,7 @@ dist:
 develop:
 	6to5-node --experimental $@
 
+
 # Code quality
 # ============
 
@@ -20,6 +21,15 @@ lint:
 
 test:
 	tape test/*.test.js | faucet
+
+
+# Tools
+# =====
+
+rebuild:
+	rm -rf node_modules
+	npm install
+
 
 .PHONY: dist develop test
 .SILENT: dist develop
