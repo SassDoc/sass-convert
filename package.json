@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "6to5": "^2.9.4",
+    "chalk": "^0.5.1",
     "eslint": "^0.11.0-alpha.0",
     "faucet": "0.0.1",
     "gulp-rename": "^1.2.0",
