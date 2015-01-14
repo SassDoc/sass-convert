@@ -1,4 +1,4 @@
-# sass-convert [![npm version](http://img.shields.io/npm/v/sass-convert.svg?style=flat)](https://www.npmjs.org/package/sass-convert) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat)](https://travis-ci.org/SassDoc/sass-convert?branch=master) [![Coverage Status](https://img.shields.io/coveralls/SassDoc/sass-convert.svg?style=flat)](https://coveralls.io/r/SassDoc/sass-convert)
+# sass-convert [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
 > Node.js bindings to [sass-convert].
 
@@ -29,6 +29,7 @@ default: `false`
 Whether to change converted file extension to `to` option (target format).
 If you want more control over renaming, you should pipe [gulp-rename]
 after the converted.
+
 
 ### dasherize
 type: `Boolean`  
@@ -82,8 +83,9 @@ vfs.src('./input/**/*.+(sass|scss|css)')
 ```
 
 ```js
+// sassdoc >= 2.0
 var gulp = require('gulp');
-var sassdoc = require('gulp-sassdoc');
+var sassdoc = require('sassdoc');
 var converter = require('sass-convert');
 
 gulp.task('sassdoc', function () {
@@ -92,9 +94,7 @@ gulp.task('sassdoc', function () {
       from: 'sass',
       to: 'scss',
     }))
-    .pipe(sassdoc({
-      'dest': 'path/to/docs'
-    }));
+    .pipe(sassdoc());
 });
 ```
 
@@ -129,3 +129,10 @@ sass-convert is [unlicensed](http://unlicense.org/).
 
 [sass-convert]: http://sass-lang.com/documentation/#executables
 [gulp-rename]: https://github.com/hparra/gulp-rename
+
+[npm-url]: https://www.npmjs.org/package/sass-convert
+[npm-image]: http://img.shields.io/npm/v/sass-convert.svg?style=flat
+[travis-url]: https://travis-ci.org/SassDoc/sass-convert?branch=master
+[travis-image]: http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/SassDoc/sass-convert
+[coveralls-image]: https://img.shields.io/coveralls/SassDoc/sass-convert.svg?style=flat
