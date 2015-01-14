@@ -23,6 +23,13 @@ Continue the stream chain even if the converter is unable to work properly
 (e.g.: no `sass-convert` binary found). Unconverted chunks/files won't be pushed
 to the next pipe anyway.
 
+### rename
+type: `Boolean`  
+default: `false`  
+Whether to change converted file extension to `to` option (target format).
+If you want more control over renaming, you should pipe [gulp-rename]
+after the converted.
+
 ### dasherize
 type: `Boolean`  
 Convert underscores to dashes.
@@ -121,3 +128,4 @@ sass-convert is [unlicensed](http://unlicense.org/).
 
 
 [sass-convert]: http://sass-lang.com/documentation/#executables
+[gulp-rename]: https://github.com/hparra/gulp-rename
