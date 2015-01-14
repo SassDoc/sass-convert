@@ -14,7 +14,7 @@ rules:
   #
   # Code
   #
-  quotes: [2, 'single']
+  quotes: [2, "single"]
   no-global-strict: 0
   no-comma-dangle: 0
   strict: 1
@@ -24,8 +24,13 @@ rules:
   #
   # Style
   #
-  no-mixed-spaces-and-tabs: [1, 'smart-tabs']
+  no-mixed-spaces-and-tabs: [1, "smart-tabs"]
   no-spaced-func: 1
-  space-after-keywords: [1, 'always', { 'checkFunctionKeyword': true } ]
+  space-after-keywords: [1, "always", { "checkFunctionKeyword": true } ]
   space-before-blocks: 'always'
   space-in-brackets: 'always'
+
+  #
+  # ES6
+  #
+  generator-star: [2, "start"]
