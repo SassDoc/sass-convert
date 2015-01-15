@@ -1,5 +1,10 @@
 # sass-convert changelog
 
+### 0.4.0
+(2015-01-14)
+
+* Added a new `rename` option.
+
 ## 0.3.0
 (2015-01-10)
 
