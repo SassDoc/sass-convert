@@ -1,5 +1,6 @@
 const fs = require('fs');
 const chalk = require('chalk');
+const dateformat = require('dateformat');
 const vfs = require('vinyl-fs');
 const through = require('through2');
 const source = require('vinyl-source-stream');
@@ -10,6 +11,7 @@ const converter = require('../lib');
 function devLog(...args) {
   console.log(...[
     chalk.styles.inverse.open,
+    `[${dateformat(new Date(), 'HH:MM:ss')}]`,
     ...args,
     chalk.styles.inverse.close
   ]);
