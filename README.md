@@ -1,4 +1,4 @@
-# sass-convert [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
+# sass-convert [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies Status][depstat-image]][depstat-url]
 
 > Node.js bindings to [sass-convert].
 
@@ -136,3 +136,5 @@ sass-convert is [unlicensed](http://unlicense.org/).
 [travis-image]: http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat
 [coveralls-url]: https://coveralls.io/r/SassDoc/sass-convert
 [coveralls-image]: https://img.shields.io/coveralls/SassDoc/sass-convert.svg?style=flat
+[depstat-url]: https://david-dm.org/SassDoc/sass-convert
+[depstat-image]: https://david-dm.org/SassDoc/sass-convert.svg
