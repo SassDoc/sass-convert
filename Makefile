@@ -1,6 +1,5 @@
 SHELL   := /bin/bash
-NPM_BIN := $(shell npm bin)
-PATH    := $(NPM_BIN):$(PATH)
+PATH    := $(shell npm bin):$(PATH)
 
 # ES6 to ES5 compilation
 # ======================
@@ -41,7 +40,7 @@ travis: cover
 
 # "patch", "minor", "major", "prepatch",
 # "preminor", "premajor", "prerelease"
-VERS := "patch"
+VERS ?= "patch"
 
 publish: dist test
 	npm version $(VERS) -m "Release %s"
