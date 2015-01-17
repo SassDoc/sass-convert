@@ -1,4 +1,10 @@
-# sass-convert [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies Status][depstat-image]][depstat-url]
+# sass-convert
+
+[![npm version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Dependencies Status][depstat-image]][depstat-url]
+[![License][license-image]][license-url]
 
 > Node.js bindings to [sass-convert].
 
@@ -131,10 +137,12 @@ sass-convert is [unlicensed](http://unlicense.org/).
 [gulp-rename]: https://github.com/hparra/gulp-rename
 
 [npm-url]: https://www.npmjs.org/package/sass-convert
-[npm-image]: http://img.shields.io/npm/v/sass-convert.svg?style=flat
+[npm-image]: http://img.shields.io/npm/v/sass-convert.svg?style=flat-square
 [travis-url]: https://travis-ci.org/SassDoc/sass-convert?branch=master
-[travis-image]: http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat
+[travis-image]: http://img.shields.io/travis/SassDoc/sass-convert.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/r/SassDoc/sass-convert
-[coveralls-image]: https://img.shields.io/coveralls/SassDoc/sass-convert.svg?style=flat
+[coveralls-image]: https://img.shields.io/coveralls/SassDoc/sass-convert.svg?style=flat-square
 [depstat-url]: https://david-dm.org/SassDoc/sass-convert
-[depstat-image]: https://david-dm.org/SassDoc/sass-convert.svg
+[depstat-image]: https://david-dm.org/SassDoc/sass-convert.svg?style=flat-square
+[license-image]: http://img.shields.io/npm/l/sass-convert.svg?style=flat-square
+[license-url]: LICENSE.md
