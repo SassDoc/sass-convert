@@ -42,7 +42,7 @@ travis: cover
 # "preminor", "premajor", "prerelease"
 VERS ?= "patch"
 
-publish: dist test
+release: dist test
 	npm version $(VERS) -m "Release %s"
 	npm publish
 	git push --follow-tags
