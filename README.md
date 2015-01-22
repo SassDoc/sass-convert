@@ -32,9 +32,9 @@ to the next pipe anyway.
 ### rename
 type: `Boolean`  
 default: `false`  
-Whether to change converted file extension to `to` option (target format).
+Whether to change converted files extensions to `to` option (target format).
 If you want more control over renaming, you should pipe [gulp-rename]
-after the converted.
+after the converter.
 
 
 ### dasherize
