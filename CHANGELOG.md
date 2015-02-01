@@ -1,5 +1,11 @@
 # sass-convert changelog
 
+### 0.4.1
+(2015-02-01)
+
+* Upgraded 6to5 from 2to3 to prevent global namespace pollution.
+See SassDoc/sassdoc/#354
+
 ### 0.4.0
 (2015-01-14)
 
