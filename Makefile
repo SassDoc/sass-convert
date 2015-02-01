@@ -1,16 +1,17 @@
 SHELL   := /bin/bash
 PATH    := $(shell npm bin):$(PATH)
 
+TO5_FLAGS := --loose all --optional selfContained
+
 # ES6 to ES5 compilation
 # ======================
 
 dist:
 	rm -rf $@
-	6to5 lib --out-dir $@
+	6to5 $(TO5_FLAGS) lib --out-dir $@
 
 develop:
-	6to5-node --experimental $@
-
+	6to5-node $(TO5_FLAGS) $@
 
 # Code quality
 # ============
