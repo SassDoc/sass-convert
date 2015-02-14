@@ -2,35 +2,26 @@ env:
   node: true
 
 ecmaFeatures:
+  arrowFunctions: true
   blockBindings: true
-  forOf: true
+  defaultParams: true
   objectLiteralComputedProperties: true
+  objectLiteralDuplicateProperties: true
   objectLiteralShorthandMethods: true
   objectLiteralShorthandProperties: true
-  objectLiteralDuplicateProperties: true
-  generators: true
+  templateStrings: true
 
 rules:
-  #
-  # Code
-  #
-  quotes: [2, "single"]
   no-global-strict: 0
   no-comma-dangle: 0
   strict: 1
   no-undef: 1
-  no-use-before-define: 1
+  no-use-before-define: 0
 
-  #
-  # Style
-  #
+  quotes: [2, "single"]
+  indent: [2, 2]
   no-mixed-spaces-and-tabs: [1, "smart-tabs"]
   no-spaced-func: 1
   space-after-keywords: [1, "always", { "checkFunctionKeyword": true } ]
   space-before-blocks: 'always'
   space-in-brackets: 'always'
-
-  #
-  # ES6
-  #
-  generator-star: [2, "start"]

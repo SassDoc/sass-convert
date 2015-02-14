@@ -10,7 +10,7 @@ var converter = require('../');
 var exist = fs.existsSync;
 var read = function (path) {
   return fs.readFileSync(path, 'utf8');
-}
+};
 
 test('before', function (assert) {
   assert.plan(1);

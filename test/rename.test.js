@@ -28,6 +28,7 @@ test('rename#true', function (assert) {
         'Should properly rename .sass file to .scss'
       );
 
+      cb();
     }))
     .on('end', function () {
       assert.pass('Converter successfully run');
@@ -57,6 +58,7 @@ test('rename#false', function (assert) {
         'Should not rename .scss file'
       );
 
+      cb();
     }))
     .on('end', function () {
       assert.pass('Converter successfully run');
