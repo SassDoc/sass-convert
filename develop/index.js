@@ -1,12 +1,12 @@
-const fs = require('fs');
-const chalk = require('chalk');
-const dateformat = require('dateformat');
-const vfs = require('vinyl-fs');
-const through = require('through2');
-const source = require('vinyl-source-stream');
-const rename = require('gulp-rename');
+import fs from 'fs';
+import chalk from 'chalk';
+import dateformat from 'dateformat';
+import vfs from 'vinyl-fs';
+import through from 'through2';
+import source from 'vinyl-source-stream';
+import rename from 'gulp-rename';
 
-const converter = require('../lib');
+import converter from '../lib';
 
 function devLog(...args) {
   console.log(...[

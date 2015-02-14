@@ -1,17 +1,15 @@
 SHELL   := /bin/bash
 PATH    := $(shell npm bin):$(PATH)
 
-TO5_FLAGS := --loose all --optional selfContained
-
 # ES6 to ES5 compilation
 # ======================
 
 dist:
 	rm -rf $@
-	6to5 $(TO5_FLAGS) lib --out-dir $@
+	6to5 lib -d $@
 
 develop:
-	6to5-node $(TO5_FLAGS) $@
+	6to5-node --experimental $@
 
 # Code quality
 # ============
@@ -26,7 +24,7 @@ cover: dist
 	rm -rf coverage
 	istanbul cover --report none --print detail test/*.test.js
 
-view-cover:
+view-cover: cover
 	istanbul report html
 	open coverage/index.html
 
