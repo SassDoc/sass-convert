@@ -2,9 +2,11 @@ language: node_js
 
 node_js:
   - '0.10'
+  - '0.12'
+  - 'iojs'
 
 env:
-  - SASS_VERSION=3.4.9
+  - SASS_VERSION=3.4.12
 
 before_install:
   - npm i npm@latest -g
