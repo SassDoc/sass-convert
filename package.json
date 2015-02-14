@@ -47,7 +47,7 @@
   "dependencies": {
     "6to5-runtime": "^3.3.2",
     "concat-stream": "^1.4.7",
-    "dargs": "^3.0.0",
+    "dargs": "^4.0.0",
     "semver": "^4.1.0",
     "semver-regex": "^1.0.0",
     "through2": "^0.6.3",
