@@ -1,5 +1,5 @@
-SHELL   := /bin/bash
-PATH    := $(shell npm bin):$(PATH)
+PATH     := $(PWD)/node_modules/.bin:$(PATH)
+625FLAGS := --playground
 
 all: dist test
 
@@ -8,10 +8,10 @@ all: dist test
 
 dist:
 	rm -rf $@
-	6to5 lib -d $@
+	6to5 $(625FLAGS) lib -d $@
 
 develop:
-	6to5-node --experimental $@
+	6to5-node $(625FLAGS) --experimental $@
 
 # Code quality
 # ============
