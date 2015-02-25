@@ -1,17 +1,16 @@
-PATH     := $(PWD)/node_modules/.bin:$(PATH)
-625FLAGS := --playground
+PATH := $(PWD)/node_modules/.bin:$(PATH)
 
 all: dist test
 
-# ES6 to ES5 compilation
+# ESnext compilation
 # ======================
 
 dist:
 	rm -rf $@
-	6to5 $(625FLAGS) lib -d $@
+	babel lib -d $@
 
 develop:
-	6to5-node $(625FLAGS) --experimental $@
+	babel-node $@
 
 # Code quality
 # ============
