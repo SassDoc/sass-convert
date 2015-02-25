@@ -10,6 +10,8 @@ ecmaFeatures:
   objectLiteralShorthandMethods: true
   objectLiteralShorthandProperties: true
   templateStrings: true
+  restParams: true
+  spread: true
 
 rules:
   no-global-strict: 0
@@ -22,6 +24,7 @@ rules:
   indent: [2, 2]
   no-mixed-spaces-and-tabs: [1, "smart-tabs"]
   no-spaced-func: 1
-  space-after-keywords: [1, "always", { "checkFunctionKeyword": true } ]
+  space-after-keywords: [1, "always"]
+  space-before-function-parentheses: {"anonymous": "always", "named": "never"}
   space-before-blocks: 'always'
   space-in-brackets: 'always'
