@@ -47,6 +47,7 @@
     "ends-with": "^0.2.0",
     "es6-denodeify": "^0.1.0",
     "es6-promise": "^2.0.1",
+    "memoize-decorator": "^1.0.2",
     "object-assign": "^2.0.0",
     "semver": "^4.1.0",
     "semver-regex": "^1.0.0",
@@ -54,7 +55,7 @@
     "which": "^1.0.5"
   },
   "devDependencies": {
-    "babel": "^4.5.0",
+    "babel": "^5.8.21",
     "chalk": "^1.0.0",
     "coveralls": "^2.11.2",
     "dateformat": "^1.0.11",

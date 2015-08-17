@@ -1,4 +1,4 @@
 {
-  "experimental": true,
-  "playground": true
+  "stage": 0,
+  "auxiliaryCommentBefore": "istanbul ignore next"
 }
