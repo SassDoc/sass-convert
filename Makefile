@@ -1,6 +1,7 @@
 PATH := $(PWD)/node_modules/.bin:$(PATH)
 
-all: dist test
+all: lint dist test
+
 
 # ESnext compilation
 # ======================
@@ -11,6 +12,7 @@ dist:
 
 develop:
 	babel-node $@
+
 
 # Code quality
 # ============
@@ -23,14 +25,15 @@ test: dist
 
 cover: dist
 	rm -rf coverage
-	istanbul cover --report none --print detail test/*.test.js
+	babel-istanbul cover --report none --print detail tape test/*.test.js
 
-view-cover: cover
-	istanbul report html
+cover-browse: dist
+	rm -rf coverage
+	babel-istanbul cover --report html tape test/*.test.js
 	open coverage/index.html
 
-travis: cover
-	istanbul report lcovonly
+travis: lint cover
+	babel-istanbul report lcovonly
 	(cat coverage/lcov.info | coveralls) || exit 0
 	rm -rf coverage
 
