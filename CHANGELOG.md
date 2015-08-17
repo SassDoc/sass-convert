@@ -1,5 +1,11 @@
 # sass-convert changelog
 
+### 0.5.1
+(2015-08-17)
+
+* Updated several dependencies, including security and major version bump.
+* Updated linting
+
 ### 0.4.1
 (2015-02-01)
 
