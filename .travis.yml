@@ -3,7 +3,8 @@ language: node_js
 node_js:
   - '0.10'
   - '0.12'
-  - 'iojs'
+  - '4.2'
+  - 'stable'
 
 env:
   - SASS_VERSION=3.4.12
