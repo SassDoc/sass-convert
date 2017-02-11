@@ -79,12 +79,6 @@
   },
   "standard": {
     "parser": "babel-eslint",
-    "globals": [
-      "it",
-      "describe",
-      "after",
-      "before",
-      "beforeEach"
-    ]
+    "env": { "mocha": true }
   }
 }
