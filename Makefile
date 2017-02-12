@@ -18,7 +18,7 @@ develop:
 # ============
 
 lint:
-	eslint ./lib ./test
+	standard ./lib/**/*.js ./test/**/*.js
 
 test: dist
 	tape test/*.test.js | faucet
